@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-08-28 01:13:12 IST",
+  "generated_at_ist": "2026-08-28 01:43:18 IST",
   "date_ist": "2026-08-28",
   "skus": [
     "Rakhi Special Gift Hamper",
@@ -106,10 +106,10 @@
       "Offline - Chandigarh": 0
     },
     "Choco Caramel Luxe Doughnut": {
-      "Overall": 589.9674805369127,
-      "Online": 589.9674805369127,
+      "Overall": 701.2674805369128,
+      "Online": 701.2674805369128,
       "Online - NCR": 185.84202192393735,
-      "Online - Bengaluru": 51.040000000000006,
+      "Online - Bengaluru": 162.34,
       "Online - Hyderabad": 353.0854586129754,
       "Offline": 0,
       "Online - Chennai": 0,
@@ -144,10 +144,10 @@
       "Offline - Chandigarh": 0
     },
     "Total": {
-      "Overall": 2339.6020890380314,
-      "Online": 945.6020890380313,
+      "Overall": 2450.9020890380316,
+      "Online": 1056.9020890380314,
       "Offline": 1394.0,
-      "Online - Bengaluru": 51.040000000000006,
+      "Online - Bengaluru": 162.34,
       "Online - Chennai": 0,
       "Online - Hyderabad": 607.0987919463087,
       "Online - NCR": 287.46329709172255,
@@ -241,10 +241,10 @@
       "Offline - Chandigarh": 0
     },
     "Choco Caramel Luxe Doughnut": {
-      "Overall": 6.0,
-      "Online": 6.0,
+      "Overall": 7.0,
+      "Online": 7.0,
       "Online - NCR": 2.0,
-      "Online - Bengaluru": 1.0,
+      "Online - Bengaluru": 2.0,
       "Online - Hyderabad": 3.0,
       "Offline": 0,
       "Online - Chennai": 0,
@@ -279,10 +279,10 @@
       "Offline - Chandigarh": 0
     },
     "Total": {
-      "Overall": 15.0,
-      "Online": 9.0,
+      "Overall": 16.0,
+      "Online": 10.0,
       "Offline": 6.0,
-      "Online - Bengaluru": 1.0,
+      "Online - Bengaluru": 2.0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 5.0,
       "Online - NCR": 3.0,
@@ -300,7 +300,7 @@
   },
   "revenue_share": {
     "Rakhi Special Gift Hamper": {
-      "Overall": 27.739759809619922,
+      "Overall": 26.480045975836177,
       "Online": 0.0,
       "Offline": 46.55667144906743,
       "Online - Bengaluru": 0.0,
@@ -357,8 +357,8 @@
       "Offline - Pune": 0.0
     },
     "Rakhi Sunshine Doughnut": {
-      "Overall": 24.534371436754853,
-      "Online": 13.431301404576166,
+      "Overall": 23.42022022152512,
+      "Online": 12.016881032212293,
       "Offline": 32.065997130559545,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0,
@@ -376,8 +376,8 @@
       "Offline - Pune": 32.065997130559545
     },
     "Choco Caramel Luxe Doughnut": {
-      "Overall": 25.21657350628748,
-      "Online": 62.39067017471286,
+      "Overall": 28.61262731275231,
+      "Online": 66.35122475490523,
       "Offline": 0.0,
       "Online - Bengaluru": 100.0,
       "Online - Chennai": 0,
@@ -395,8 +395,8 @@
       "Offline - Pune": 0.0
     },
     "Nutty Stars Doughnut": {
-      "Overall": 22.509295247337732,
-      "Online": 24.178028420710973,
+      "Overall": 21.487106489886386,
+      "Online": 21.631894212882475,
       "Offline": 21.37733142037303,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0,
@@ -435,7 +435,7 @@
   },
   "revenue_share_of_day": {
     "Rakhi Special Gift Hamper": {
-      "Overall": 1.9709148841123305,
+      "Overall": 1.7252516767372803,
       "Online": 0.0,
       "Offline": 5.36984496951434,
       "Online - Bengaluru": 0.0,
@@ -492,12 +492,12 @@
       "Offline - Pune": 0.0
     },
     "Rakhi Sunshine Doughnut": {
-      "Overall": 1.7431714682789499,
-      "Online": 0.6093533548978722,
+      "Overall": 1.5258951681433648,
+      "Online": 0.4974471594581739,
       "Offline": 3.698491065289538,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0.0,
-      "Online - Hyderabad": 1.6146037266996518,
+      "Online - Hyderabad": 1.2768249008669554,
       "Online - NCR": 0.0,
       "Online - Jaipur": 0.0,
       "Online - Chandigarh": 0,
@@ -511,13 +511,13 @@
       "Offline - Pune": 4.447376197284415
     },
     "Choco Caramel Luxe Doughnut": {
-      "Overall": 1.791642047045382,
-      "Online": 2.830549552877641,
+      "Overall": 1.86419552640622,
+      "Online": 2.746655158890433,
       "Offline": 0.0,
-      "Online - Bengaluru": 0.9611364911738896,
+      "Online - Bengaluru": 2.4045490026468697,
       "Online - Chennai": 0.0,
-      "Online - Hyderabad": 4.488686399558809,
-      "Online - NCR": 2.9298296089284004,
+      "Online - Hyderabad": 3.549642845712108,
+      "Online - NCR": 2.6017399145727116,
       "Online - Jaipur": 0.0,
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
@@ -530,13 +530,13 @@
       "Offline - Pune": 0.0
     },
     "Nutty Stars Doughnut": {
-      "Overall": 1.5992894436840737,
-      "Online": 1.096912524646099,
+      "Overall": 1.3999472105802637,
+      "Online": 0.8954673264263034,
       "Offline": 2.4656607101930255,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0.0,
-      "Online - Hyderabad": 1.6146037266996518,
-      "Online - NCR": 1.602075880370564,
+      "Online - Hyderabad": 1.2768249008669554,
+      "Online - NCR": 1.4226713906611268,
       "Online - Jaipur": 0.0,
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
@@ -549,13 +549,13 @@
       "Offline - Pune": 2.9649174648562764
     },
     "Total": {
-      "Overall": 7.105017843120737,
-      "Online": 4.536815432421612,
+      "Overall": 6.51528958186713,
+      "Online": 4.139569644774911,
       "Offline": 11.533996744996903,
-      "Online - Bengaluru": 0.9611364911738896,
+      "Online - Bengaluru": 2.4045490026468697,
       "Online - Chennai": 0.0,
-      "Online - Hyderabad": 7.717893852958111,
-      "Online - NCR": 4.531905489298964,
+      "Online - Hyderabad": 6.103292647446019,
+      "Online - NCR": 4.024411305233838,
       "Online - Jaipur": 0.0,
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
@@ -569,13 +569,13 @@
     }
   },
   "day_total_revenue": {
-    "Overall": 32928.87,
-    "Online": 20842.86,
-    "Online - Bengaluru": 5310.380000000001,
-    "Online - NCR": 6343.099999999999,
-    "Online - Chennai": 1068.6,
+    "Overall": 37617.700000000004,
+    "Online": 25531.690000000002,
+    "Online - Bengaluru": 6751.370000000001,
+    "Online - NCR": 7142.99,
+    "Online - Chennai": 1435.6,
     "Online - Jaipur": 254.66,
-    "Online - Hyderabad": 7866.120000000001,
+    "Online - Hyderabad": 9947.07,
     "Offline": 12086.009999999998,
     "Offline - Bengaluru": 278.0,
     "Offline - Pune": 10050.869999999999,
