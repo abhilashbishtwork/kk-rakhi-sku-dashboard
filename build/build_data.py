@@ -171,6 +171,38 @@ def run(query_runner, date_ist):
     }
 
 
+def _archive_previous_day_if_rolled_over(date_ist):
+    """Short-lived tracker (Rakhi launch window, ~3 days) — each calendar day
+    gets a frozen tab. On the first run of a new day, archive the last
+    snapshot under data-{old_date}.json and add a matching tab entry to
+    index.html's DAY_FILES list, so no manual step is needed each morning."""
+    if not os.path.exists(DATA_JSON_PATH):
+        return
+    with open(DATA_JSON_PATH) as f:
+        old_payload = json.load(f)
+    old_date = old_payload.get("date_ist")
+    if not old_date or old_date == str(date_ist):
+        return  # same day, nothing to archive
+
+    archive_path = os.path.join(os.path.dirname(DATA_JSON_PATH), f"data-{old_date}.json")
+    if not os.path.exists(archive_path):
+        with open(archive_path, "w") as f:
+            json.dump(old_payload, f, indent=2)
+        print(f"Archived {old_date} snapshot -> {archive_path}")
+
+    label = datetime.strptime(old_date, "%Y-%m-%d").strftime("%-d %b")
+    index_path = os.path.join(os.path.dirname(DATA_JSON_PATH), "index.html")
+    with open(index_path) as f:
+        html = f.read()
+    marker = "{ label: 'Today', file: 'data.json', live: true },"
+    new_entry = f"{marker}\n  {{ label: '{label}', file: 'data-{old_date}.json', live: false }},"
+    if f"data-{old_date}.json'" not in html and marker in html:
+        html = html.replace(marker, new_entry, 1)
+        with open(index_path, "w") as f:
+            f.write(html)
+        print(f"Added '{label}' tab to index.html")
+
+
 def main():
     password = os.environ.get("CLICKHOUSE_PASSWORD")
     if not password:
@@ -178,6 +210,7 @@ def main():
         sys.exit(1)
 
     date_ist = today_ist()
+    _archive_previous_day_if_rolled_over(date_ist)
     payload = run(lambda sql: run_query(sql, password), date_ist)
 
     with open(DATA_JSON_PATH, "w") as f:
