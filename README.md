@@ -16,9 +16,12 @@ Each table's columns: Overall | Online | Online-<city> ... | Offline | Offline-<
 
 - `build/build_data.py` pulls today's (IST) ClickHouse data for brand_id 95469015, using the
   validated item-level `price_share` revenue formula, and writes `data.json`.
-- `.github/workflows/refresh.yml` runs this every hour (`workflow_dispatch` also available for
-  an on-demand run from the Actions tab) and commits `data.json` if it changed.
-- `index.html` is a static page that reads `data.json`, auto-refreshing every hour client-side too.
+- `.github/workflows/refresh.yml` runs this every 30 min (`workflow_dispatch` also available for
+  an on-demand run from the Actions tab) and commits `data.json` if it changed. Note: GitHub's
+  scheduled-workflow cron is best-effort, not guaranteed — it can be delayed or occasionally skip
+  a run under platform load. The dashboard's stale-data banner (>50 min since last pull) is the
+  safety net for that; if it fires, trigger a manual run from the Actions tab or `gh workflow run`.
+- `index.html` is a static page that reads `data.json`, auto-refreshing every 30 min client-side too.
 
 ## Manual run
 

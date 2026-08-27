@@ -82,7 +82,7 @@ th.grp-offline{color:#8a5b00}
 </div>
 
 <script>
-const AUTO_REFRESH_MS = 60 * 60 * 1000; // 1 hour, matches the data pipeline's own refresh cadence
+const AUTO_REFRESH_MS = 30 * 60 * 1000; // 30 min, matches the data pipeline's own refresh cadence
 
 function fmtMoney(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); }
 function fmtUnits(n){ return Math.round(n).toLocaleString('en-IN'); }
@@ -160,14 +160,14 @@ async function loadAll(){
     renderTable('t-share-day', d.revenue_share_of_day, d.columns, d.skus, fmtPct);
 
     document.getElementById('meta').textContent =
-      `Data for ${d.date_ist} (IST) · last pulled ${d.generated_at_ist} · auto-refreshes hourly via GitHub Actions, or click Refresh to re-check`;
+      `Data for ${d.date_ist} (IST) · last pulled ${d.generated_at_ist} · auto-refreshes every 30 min via GitHub Actions, or click Refresh to re-check`;
 
     const banner = document.getElementById('stale-banner');
     const genTime = new Date(d.generated_at_ist.replace(' IST','').replace(' ','T') + '+05:30');
     const ageMin = (Date.now() - genTime.getTime()) / 60000;
-    if (ageMin > 90){
+    if (ageMin > 50){
       banner.style.display = 'block';
-      banner.textContent = `⚠ Last data pull was ${Math.round(ageMin)} min ago — the hourly refresh job may have stalled. Numbers may be behind.`;
+      banner.textContent = `⚠ Last data pull was ${Math.round(ageMin)} min ago — the 30-min refresh job may have stalled. Numbers may be behind.`;
     } else {
       banner.style.display = 'none';
     }
