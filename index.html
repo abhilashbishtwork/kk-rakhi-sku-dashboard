@@ -47,6 +47,12 @@ th.grp-offline{color:#8a5b00}
   <p class="banner" id="stale-banner"></p>
 
   <section>
+    <h2>Summary</h2>
+    <p class="sub">Rakhi range (all 6 SKUs combined), today so far.</p>
+    <div class="table-scroll"><table id="t-summary"></table></div>
+  </section>
+
+  <section>
     <h2>Revenue (₹)</h2>
     <p class="sub">Item-level revenue, net of merchant discount, cancelled/rejected orders excluded.</p>
     <div class="table-scroll"><table id="t-revenue"></table></div>
@@ -98,10 +104,26 @@ function renderTable(elId, data, columns, skus, fmt){
   el.innerHTML = html;
 }
 
+function renderSummary(d){
+  const t = d.revenue.Total, u = d.units.Total, s = d.revenue_share_of_day.Total;
+  const rows = [
+    ['Overall', t.Overall, u.Overall, s.Overall],
+    ['Online', t.Online, u.Online, s.Online],
+    ['Offline', t.Offline, u.Offline, s.Offline],
+  ];
+  let html = '<thead><tr><th>Details</th><th>Revenue</th><th>Units</th><th>Share of brand\'s day revenue</th></tr></thead><tbody>';
+  for (const [label, rev, units, share] of rows){
+    html += `<tr><td>${label}</td><td>${fmtMoney(rev||0)}</td><td>${fmtUnits(units||0)}</td><td>${fmtPct(share||0)}</td></tr>`;
+  }
+  html += '</tbody>';
+  document.getElementById('t-summary').innerHTML = html;
+}
+
 async function loadAll(){
   try{
     const res = await fetch('data.json?cb=' + Date.now());
     const d = await res.json();
+    renderSummary(d);
     renderTable('t-revenue', d.revenue, d.columns, d.skus, fmtMoney);
     renderTable('t-units', d.units, d.columns, d.skus, fmtUnits);
     renderTable('t-share', d.revenue_share, d.columns, d.skus, fmtPct);
