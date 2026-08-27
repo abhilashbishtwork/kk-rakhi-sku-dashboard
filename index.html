@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krispy Kreme · Rakhi SKU Tracker</title>
+<style>
+:root{
+  --bg:#f6f7f5; --surface:#ffffff; --text:#14181a; --muted:#6b7674;
+  --border:#e7eae6; --brand:#0a6b3f; --brand-dark:#054d2c;
+  --shadow:0 1px 2px rgba(20,24,26,.04),0 4px 14px rgba(20,24,26,.06);
+  --stale-bg:#fff3dc; --stale-text:#8a5b00;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin:0;padding:0 0 48px}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px}
+.top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.top h1{margin:0;font-size:1.6rem;letter-spacing:-0.01em}
+.top h1 .dot{color:var(--brand)}
+#meta{color:var(--muted);font-size:.85rem;margin:0 0 20px}
+#refresh-btn{background:var(--brand);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:.85rem;font-weight:600;cursor:pointer}
+#refresh-btn:hover{background:var(--brand-dark)}
+.banner{background:var(--stale-bg);color:var(--stale-text);border-radius:10px;padding:10px 14px;font-size:.82rem;margin-bottom:18px;display:none}
+section{margin-bottom:34px}
+h2{font-size:1.1rem;margin:0 0 4px}
+.sub{color:var(--muted);font-size:.8rem;margin:0 0 12px}
+.table-scroll{overflow-x:auto;background:var(--surface);border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--border)}
+table{border-collapse:collapse;width:100%;font-size:.82rem;white-space:nowrap}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--border)}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface);z-index:1}
+thead th{color:var(--muted);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;background:var(--surface);position:sticky;top:0}
+thead th:first-child{z-index:2}
+tbody tr:last-child{font-weight:700;background:#f0f5f2}
+tbody tr:last-child td:first-child{background:#f0f5f2}
+th.grp-online{color:var(--brand-dark)}
+th.grp-offline{color:#8a5b00}
+.loading{padding:24px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Krispy Kreme <span class="dot">·</span> Rakhi SKU Tracker</h1>
+    <button id="refresh-btn" onclick="loadAll()">Refresh</button>
+  </div>
+  <p id="meta">Loading…</p>
+  <p class="banner" id="stale-banner"></p>
+
+  <section>
+    <h2>Revenue (₹)</h2>
+    <p class="sub">Item-level revenue, net of merchant discount, cancelled/rejected orders excluded.</p>
+    <div class="table-scroll"><table id="t-revenue"></table></div>
+  </section>
+
+  <section>
+    <h2>Units</h2>
+    <p class="sub">Quantity sold.</p>
+    <div class="table-scroll"><table id="t-units"></table></div>
+  </section>
+
+  <section>
+    <h2>Revenue Share</h2>
+    <p class="sub">Each SKU's share of the 6-SKU Rakhi-range total, per column (columns sum to 100%).</p>
+    <div class="table-scroll"><table id="t-share"></table></div>
+  </section>
+</div>
+
+<script>
+const AUTO_REFRESH_MS = 60 * 60 * 1000; // 1 hour, matches the data pipeline's own refresh cadence
+
+function fmtMoney(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtUnits(n){ return Math.round(n).toLocaleString('en-IN'); }
+function fmtPct(n){ return n.toFixed(1) + '%'; }
+
+function renderTable(elId, data, columns, skus, fmt){
+  const el = document.getElementById(elId);
+  const rows = [...skus, 'Total'];
+  let html = '<thead><tr><th>SKU</th>';
+  for (const c of columns){
+    const cls = c.startsWith('Online') ? 'grp-online' : c.startsWith('Offline') ? 'grp-offline' : '';
+    html += `<th class="${cls}">${c}</th>`;
+  }
+  html += '</tr></thead><tbody>';
+  for (const r of rows){
+    html += `<tr><td>${r}</td>`;
+    for (const c of columns){
+      html += `<td>${fmt((data[r] && data[r][c]) || 0)}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody>';
+  el.innerHTML = html;
+}
+
+async function loadAll(){
+  try{
+    const res = await fetch('data.json?cb=' + Date.now());
+    const d = await res.json();
+    renderTable('t-revenue', d.revenue, d.columns, d.skus, fmtMoney);
+    renderTable('t-units', d.units, d.columns, d.skus, fmtUnits);
+    renderTable('t-share', d.revenue_share, d.columns, d.skus, fmtPct);
+
+    document.getElementById('meta').textContent =
+      `Data for ${d.date_ist} (IST) · last pulled ${d.generated_at_ist} · auto-refreshes hourly via GitHub Actions, or click Refresh to re-check`;
+
+    const banner = document.getElementById('stale-banner');
+    const genTime = new Date(d.generated_at_ist.replace(' IST','').replace(' ','T') + '+05:30');
+    const ageMin = (Date.now() - genTime.getTime()) / 60000;
+    if (ageMin > 90){
+      banner.style.display = 'block';
+      banner.textContent = `⚠ Last data pull was ${Math.round(ageMin)} min ago — the hourly refresh job may have stalled. Numbers may be behind.`;
+    } else {
+      banner.style.display = 'none';
+    }
+
+    if (d.notes && (d.notes.extra_channel_seen || (d.notes.unmapped_cities && Object.keys(d.notes.unmapped_cities).length))){
+      banner.style.display = 'block';
+      banner.textContent = (banner.textContent ? banner.textContent + ' · ' : '') +
+        '⚠ Some rows fell outside the known channel/city list — check build notes in data.json.';
+    }
+  } catch(e){
+    document.getElementById('meta').textContent = 'Failed to load data.json — try Refresh.';
+  }
+}
+
+loadAll();
+setInterval(loadAll, AUTO_REFRESH_MS);
+</script>
+</body>
+</html>
