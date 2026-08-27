@@ -59,9 +59,15 @@ th.grp-offline{color:#8a5b00}
   </section>
 
   <section>
-    <h2>Revenue Share</h2>
+    <h2>Revenue Share (within Rakhi range)</h2>
     <p class="sub">Each SKU's share of the 6-SKU Rakhi-range total, per column (columns sum to 100%).</p>
     <div class="table-scroll"><table id="t-share"></table></div>
+  </section>
+
+  <section>
+    <h2>Revenue Share (of brand's total revenue)</h2>
+    <p class="sub">Each SKU's revenue as a % of Krispy Kreme's ENTIRE brand revenue that day, per column — i.e. how much of the day's business these Rakhi SKUs are driving.</p>
+    <div class="table-scroll"><table id="t-share-day"></table></div>
   </section>
 </div>
 
@@ -99,6 +105,7 @@ async function loadAll(){
     renderTable('t-revenue', d.revenue, d.columns, d.skus, fmtMoney);
     renderTable('t-units', d.units, d.columns, d.skus, fmtUnits);
     renderTable('t-share', d.revenue_share, d.columns, d.skus, fmtPct);
+    renderTable('t-share-day', d.revenue_share_of_day, d.columns, d.skus, fmtPct);
 
     document.getElementById('meta').textContent =
       `Data for ${d.date_ist} (IST) · last pulled ${d.generated_at_ist} · auto-refreshes hourly via GitHub Actions, or click Refresh to re-check`;

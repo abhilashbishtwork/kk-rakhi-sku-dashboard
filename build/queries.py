@@ -84,3 +84,35 @@ WHERE (ls.final_status IS NULL OR ls.final_status NOT IN ('Cancelled','Rejected'
 GROUP BY r.item_name, r.channel, r.city
 FORMAT TabSeparatedWithNames
 """
+
+
+def build_total_revenue_query(date_ist):
+    """Whole-brand order-level revenue (ALL items, not just the 6 Rakhi
+    SKUs) per channel/city, for today. Denominator for the "share of the
+    day's total revenue" table — order-level, no item_options explosion
+    needed since nothing here is being split across items."""
+    return f"""
+WITH
+filtered_orders AS (
+    SELECT id AS order_id, channel, city,
+           sub_total_amount, discount, aggregator_discount, charges
+    FROM orders
+    WHERE brand_id = {BRAND_ID}
+      AND toDate(created_at_ist) = '{date_ist}'
+),
+latest_state AS (
+    SELECT order_id, argMax(to_status, status_changed_at_ist) AS final_status
+    FROM orders_state_transitions
+    WHERE brand_id = {BRAND_ID}
+    GROUP BY order_id
+)
+SELECT
+    fo.channel AS channel,
+    fo.city AS city,
+    sum(fo.sub_total_amount - (fo.discount - fo.aggregator_discount) + fo.charges) AS revenue
+FROM filtered_orders fo
+LEFT JOIN latest_state ls ON ls.order_id = fo.order_id
+WHERE (ls.final_status IS NULL OR ls.final_status NOT IN ('Cancelled','Rejected','customer_cancelled'))
+GROUP BY fo.channel, fo.city
+FORMAT TabSeparatedWithNames
+"""

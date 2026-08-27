@@ -10,7 +10,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 from build.clickhouse_client import run_query
-from build.queries import build_sku_query, SKUS
+from build.queries import build_sku_query, build_total_revenue_query, SKUS
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -60,6 +60,7 @@ def channel_bucket(channel):
 
 def run(query_runner, date_ist):
     rows = query_runner(build_sku_query(date_ist))
+    total_rows = query_runner(build_total_revenue_query(date_ist))
 
     # Discover which "Other" (unmapped) buckets actually have data, so we
     # never silently drop revenue that doesn't fit the fixed city list.
@@ -68,9 +69,13 @@ def run(query_runner, date_ist):
 
     revenue = {sku: {} for sku in SKUS}
     units = {sku: {} for sku in SKUS}
+    day_total = {}  # whole-brand revenue per column, for the "share of day" table
 
-    def add(table, sku, col, val):
-        table[sku][col] = table[sku].get(col, 0) + val
+    def add(table, key, col, val):
+        table[key][col] = table[key].get(col, 0) + val
+
+    def add_flat(table, col, val):
+        table[col] = table.get(col, 0) + val
 
     for row in rows:
         item_name = row["item_name"]
@@ -95,12 +100,26 @@ def run(query_runner, date_ist):
         add(revenue, sku, col, rev)
         add(units, sku, col, qty)
 
-    # Build the fixed column list, appending an "Other" city bucket per side
-    # only if it actually has data (keeps the table clean on a quiet day).
-    columns = ["Overall", "Online"] + [f"Online - {c}" for c in CITY_GROUPS]
+    for row in total_rows:
+        rev = float(row["revenue"] or 0)
+        bucket = channel_bucket(row["channel"])
+        if bucket == "Other":
+            extra_channel_seen = True
+            continue
+        cgroup = city_group(row["city"])
+        if cgroup == "Other":
+            extra_cities[bucket].add(row["city"] or "(blank)")
+        add_flat(day_total, "Overall", rev)
+        add_flat(day_total, bucket, rev)
+        add_flat(day_total, f"{bucket} - {cgroup}", rev)
+
+    # Column order: the 3 top-level totals first, then all city cuts —
+    # Overall | Online | Offline | Online-<city>... | Offline-<city>...
+    columns = ["Overall", "Online", "Offline"]
+    columns += [f"Online - {c}" for c in CITY_GROUPS]
     if extra_cities["Online"]:
         columns.append("Online - Other")
-    columns += ["Offline"] + [f"Offline - {c}" for c in CITY_GROUPS]
+    columns += [f"Offline - {c}" for c in CITY_GROUPS]
     if extra_cities["Offline"]:
         columns.append("Offline - Other")
 
@@ -110,6 +129,7 @@ def run(query_runner, date_ist):
     revenue["Total"] = total_row(revenue)
     units["Total"] = total_row(units)
 
+    # Table 3: each SKU's share of the 6-SKU Rakhi-range total, per column.
     revenue_share = {}
     for sku in SKUS + ["Total"]:
         revenue_share[sku] = {}
@@ -118,10 +138,21 @@ def run(query_runner, date_ist):
             val = revenue[sku].get(col, 0)
             revenue_share[sku][col] = (val / denom * 100) if denom else 0
 
+    # Table 4: each SKU's share of the WHOLE BRAND's revenue that day, per column.
+    revenue_share_of_day = {}
+    for sku in SKUS + ["Total"]:
+        revenue_share_of_day[sku] = {}
+        for col in columns:
+            denom = day_total.get(col, 0)
+            val = revenue[sku].get(col, 0)
+            revenue_share_of_day[sku][col] = (val / denom * 100) if denom else 0
+
     for sku in SKUS + ["Total"]:
         for col in columns:
             revenue[sku].setdefault(col, 0)
             units[sku].setdefault(col, 0)
+    for col in columns:
+        day_total.setdefault(col, 0)
 
     return {
         "generated_at_ist": datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST"),
@@ -131,6 +162,8 @@ def run(query_runner, date_ist):
         "revenue": revenue,
         "units": units,
         "revenue_share": revenue_share,
+        "revenue_share_of_day": revenue_share_of_day,
+        "day_total_revenue": day_total,
         "notes": {
             "extra_channel_seen": extra_channel_seen,
             "unmapped_cities": {k: sorted(v) for k, v in extra_cities.items() if v},
