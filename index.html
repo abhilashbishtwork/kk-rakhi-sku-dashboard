@@ -105,15 +105,28 @@ function renderTable(elId, data, columns, skus, fmt){
 }
 
 function renderSummary(d){
-  const t = d.revenue.Total, u = d.units.Total, s = d.revenue_share_of_day.Total;
-  const rows = [
-    ['Overall', t.Overall, u.Overall, s.Overall],
-    ['Online', t.Online, u.Online, s.Online],
-    ['Offline', t.Offline, u.Offline, s.Offline],
-  ];
-  let html = '<thead><tr><th>Details</th><th>Revenue</th><th>Units</th><th>Share of brand\'s day revenue</th></tr></thead><tbody>';
-  for (const [label, rev, units, share] of rows){
-    html += `<tr><td>${label}</td><td>${fmtMoney(rev||0)}</td><td>${fmtUnits(units||0)}</td><td>${fmtPct(share||0)}</td></tr>`;
+  const t = d.revenue.Total, u = d.units.Total;
+  // City order derived from the data itself (single source of truth),
+  // not hardcoded — picks up "Other" too if it ever appears.
+  const cities = d.columns
+    .filter(c => c.startsWith('Online - '))
+    .map(c => c.slice('Online - '.length));
+
+  const rows = [['Overall', u.Online, u.Offline, t.Online, t.Offline]];
+  for (const city of cities){
+    rows.push([
+      city,
+      u[`Online - ${city}`], u[`Offline - ${city}`],
+      t[`Online - ${city}`], t[`Offline - ${city}`],
+    ]);
+  }
+
+  let html = '<thead><tr><th>Details</th>' +
+    '<th class="grp-online">Units - Online</th><th class="grp-offline">Units - Offline</th>' +
+    '<th class="grp-online">Revenue - Online</th><th class="grp-offline">Revenue - Offline</th></tr></thead><tbody>';
+  for (const [label, uOn, uOff, rOn, rOff] of rows){
+    const cls = label === 'Overall' ? ' style="font-weight:700;background:#f0f5f2"' : '';
+    html += `<tr${cls}><td${cls}>${label}</td><td>${fmtUnits(uOn||0)}</td><td>${fmtUnits(uOff||0)}</td><td>${fmtMoney(rOn||0)}</td><td>${fmtMoney(rOff||0)}</td></tr>`;
   }
   html += '</tbody>';
   document.getElementById('t-summary').innerHTML = html;
