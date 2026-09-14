@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-09-14 10:19:28 IST",
+  "generated_at_ist": "2026-09-14 16:01:57 IST",
   "date_ist": "2026-09-14",
   "skus": [
     "Rakhi Special Gift Hamper",
@@ -448,7 +448,7 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
@@ -467,7 +467,7 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
@@ -486,7 +486,7 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
@@ -505,7 +505,7 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
@@ -524,7 +524,7 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
@@ -543,7 +543,7 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
@@ -562,30 +562,30 @@
       "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
-      "Offline - NCR": 0,
+      "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
       "Offline - Chandigarh": 0.0,
       "Offline - Pune": 0.0
     }
   },
   "day_total_revenue": {
-    "Overall": 93093.67,
-    "Online": 80147.43,
-    "Online - Chandigarh": 3634.71,
-    "Online - Bengaluru": 27450.300000000003,
-    "Online - Pune": 1414.19,
-    "Online - Hyderabad": 23991.340000000004,
-    "Online - NCR": 15832.370000000003,
-    "Online - Chennai": 4594.87,
-    "Online - Jaipur": 3229.6499999999996,
-    "Offline": 12946.24,
-    "Offline - Chennai": 964.0,
-    "Offline - Bengaluru": 4302.33,
-    "Offline - Pune": 49.0,
-    "Offline - Hyderabad": 240.0,
-    "Offline - Chandigarh": 493.0,
-    "Offline - Jaipur": 6897.91,
-    "Offline - NCR": 0
+    "Overall": 639393.2500000001,
+    "Online": 347232.4100000001,
+    "Online - NCR": 58127.61,
+    "Online - Chandigarh": 13180.250000000002,
+    "Online - Bengaluru": 134293.09000000005,
+    "Online - Pune": 22700.369999999995,
+    "Offline": 292160.8400000001,
+    "Offline - Bengaluru": 134711.92000000007,
+    "Online - Hyderabad": 72703.96,
+    "Offline - NCR": 36241.45,
+    "Online - Chennai": 39574.13,
+    "Online - Jaipur": 6653.0,
+    "Offline - Chennai": 47758.869999999995,
+    "Offline - Chandigarh": 7220.24,
+    "Offline - Hyderabad": 34919.009999999995,
+    "Offline - Pune": 16856.1,
+    "Offline - Jaipur": 14453.25
   },
   "notes": {
     "extra_channel_seen": false,
