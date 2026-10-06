@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-10-06 16:13:48 IST",
+  "generated_at_ist": "2026-10-06 22:38:46 IST",
   "date_ist": "2026-10-06",
   "skus": [
     "Rakhi Special Gift Hamper",
@@ -627,31 +627,32 @@
     }
   },
   "day_total_revenue": {
-    "Overall": 717518.43,
-    "Online": 413280.43000000005,
-    "Online - NCR": 90001.59000000001,
-    "Online - Chandigarh": 12541.31,
-    "Online - Other": 264.0,
-    "Online - Bengaluru": 159934.65000000008,
-    "Online - Pune": 28754.32,
-    "Offline": 304238.00000000006,
-    "Offline - Bengaluru": 92622.94,
-    "Online - Hyderabad": 83551.94999999998,
-    "Offline - NCR": 52597.65000000001,
-    "Online - Chennai": 28894.61,
-    "Online - Jaipur": 9338.0,
-    "Offline - Chennai": 94378.2,
-    "Offline - Hyderabad": 33758.68,
-    "Offline - Pune": 10311.210000000001,
-    "Offline - Chandigarh": 8417.35,
-    "Offline - Jaipur": 11147.970000000001,
-    "Offline - Other": 1004.0
+    "Overall": 1592572.44,
+    "Online": 908336.07,
+    "Online - NCR": 187443.14,
+    "Online - Chandigarh": 25212.74,
+    "Online - Other": 1699.0,
+    "Online - Bengaluru": 351242.68999999994,
+    "Online - Pune": 73678.55000000002,
+    "Offline": 684236.3700000001,
+    "Offline - NCR": 114740.29999999999,
+    "Online - Hyderabad": 170877.9899999999,
+    "Offline - Bengaluru": 246355.20000000013,
+    "Online - Chennai": 76331.55,
+    "Online - Jaipur": 21850.410000000003,
+    "Offline - Chennai": 164834.74,
+    "Offline - Chandigarh": 17233.55,
+    "Offline - Hyderabad": 81658.09000000001,
+    "Offline - Pune": 36125.079999999994,
+    "Offline - Jaipur": 20937.409999999996,
+    "Offline - Other": 2352.0
   },
   "notes": {
     "extra_channel_seen": true,
     "unmapped_cities": {
       "Online": [
-        "Navi Mumbai"
+        "Navi Mumbai",
+        "Panvel"
       ],
       "Offline": [
         "Navi Mumbai"
