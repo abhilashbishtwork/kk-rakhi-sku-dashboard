@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-10-16 19:41:33 IST",
+  "generated_at_ist": "2026-10-16 23:48:19 IST",
   "date_ist": "2026-10-16",
   "skus": [
     "Rakhi Special Gift Hamper",
@@ -563,9 +563,9 @@
       "Offline - Other": 0.0
     },
     "Choco Caramel Luxe Doughnut": {
-      "Overall": 0.008577612954310978,
+      "Overall": 0.006210793589119487,
       "Online": 0.0,
-      "Offline": 0.017873501954005187,
+      "Offline": 0.01284174382237286,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0.0,
       "Online - Hyderabad": 0.0,
@@ -575,7 +575,7 @@
       "Online - Pune": 0.0,
       "Online - Other": 0.0,
       "Offline - Bengaluru": 0.0,
-      "Offline - Chennai": 0.12281456770500314,
+      "Offline - Chennai": 0.08196528561001619,
       "Offline - Hyderabad": 0.0,
       "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
@@ -605,9 +605,9 @@
       "Offline - Other": 0.0
     },
     "Total": {
-      "Overall": 0.008577612954310978,
+      "Overall": 0.006210793589119487,
       "Online": 0.0,
-      "Offline": 0.017873501954005187,
+      "Offline": 0.01284174382237286,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0.0,
       "Online - Hyderabad": 0.0,
@@ -617,7 +617,7 @@
       "Online - Pune": 0.0,
       "Online - Other": 0.0,
       "Offline - Bengaluru": 0.0,
-      "Offline - Chennai": 0.12281456770500314,
+      "Offline - Chennai": 0.08196528561001619,
       "Offline - Hyderabad": 0.0,
       "Offline - NCR": 0.0,
       "Offline - Jaipur": 0.0,
@@ -627,28 +627,28 @@
     }
   },
   "day_total_revenue": {
-    "Overall": 1690446.9900000002,
-    "Online": 879190.19,
-    "Online - NCR": 148527.19,
-    "Online - Chandigarh": 18263.879999999997,
-    "Online - Bengaluru": 360102.20999999973,
-    "Online - Pune": 48771.72000000001,
-    "Offline": 811256.8000000002,
-    "Offline - Bengaluru": 300209.2600000002,
-    "Online - Hyderabad": 150003.70000000004,
-    "Offline - NCR": 89383.09,
-    "Online - Other": 48685.619999999995,
-    "Online - Chennai": 86578.87000000002,
-    "Online - Jaipur": 18257.0,
-    "Offline - Chennai": 118064.16999999998,
-    "Offline - Chandigarh": 11368.41,
-    "Offline - Hyderabad": 129933.18,
-    "Offline - Pune": 25836.079999999994,
-    "Offline - Jaipur": 27322.539999999994,
-    "Offline - Other": 109140.07
+    "Overall": 2334645.289999999,
+    "Online": 1205515.15,
+    "Online - NCR": 227590.17000000004,
+    "Online - Chandigarh": 26620.02,
+    "Online - Bengaluru": 438035.35999999964,
+    "Online - Pune": 87125.17000000004,
+    "Offline": 1129130.14,
+    "Offline - Bengaluru": 402225.4299999999,
+    "Offline - NCR": 143949.30999999997,
+    "Online - Hyderabad": 230590.06999999995,
+    "Online - Other": 70666.22,
+    "Online - Chennai": 100916.86000000002,
+    "Online - Jaipur": 23971.28,
+    "Offline - Chennai": 176904.15999999997,
+    "Offline - Chandigarh": 23215.18,
+    "Offline - Hyderabad": 179613.07000000007,
+    "Offline - Pune": 44782.30999999998,
+    "Offline - Jaipur": 33214.53999999999,
+    "Offline - Other": 125226.14
   },
   "notes": {
-    "extra_channel_seen": false,
+    "extra_channel_seen": true,
     "unmapped_cities": {
       "Online": [
         "Coimbatore",
