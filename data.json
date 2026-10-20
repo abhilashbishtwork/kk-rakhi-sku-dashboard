@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-10-20 03:46:28 IST",
+  "generated_at_ist": "2026-10-20 06:42:38 IST",
   "date_ist": "2026-10-20",
   "skus": [
     "Rakhi Special Gift Hamper",
@@ -569,19 +569,19 @@
     }
   },
   "day_total_revenue": {
-    "Overall": 63845.30999999999,
-    "Online": 60408.63999999999,
-    "Online - Bengaluru": 15054.559999999998,
+    "Overall": 66845.73,
+    "Online": 62969.06,
+    "Online - Bengaluru": 15143.36,
     "Online - Pune": 3146.48,
-    "Online - Hyderabad": 19472.700000000004,
+    "Online - Hyderabad": 21068.840000000004,
+    "Online - NCR": 13530.660000000002,
     "Online - Chandigarh": 2684.0299999999997,
-    "Online - NCR": 12655.18,
     "Online - Chennai": 4890.09,
     "Online - Jaipur": 2505.6,
-    "Offline": 3436.67,
+    "Offline": 3876.67,
     "Offline - Bengaluru": 155.0,
     "Offline - Pune": 300.0,
-    "Offline - Jaipur": 2981.67,
+    "Offline - Jaipur": 3421.67,
     "Offline - Chennai": 0,
     "Offline - Hyderabad": 0,
     "Offline - NCR": 0,
