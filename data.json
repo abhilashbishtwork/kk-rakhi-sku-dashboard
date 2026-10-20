@@ -1,5 +1,5 @@
 {
-  "generated_at_ist": "2026-10-20 12:00:52 IST",
+  "generated_at_ist": "2026-10-20 17:32:37 IST",
   "date_ist": "2026-10-20",
   "skus": [
     "Rakhi Special Gift Hamper",
@@ -137,9 +137,10 @@
       "Offline - Other": 0
     },
     "Nutty Stars Doughnut": {
-      "Overall": 0,
+      "Overall": 145.00000000000003,
+      "Offline": 145.00000000000003,
+      "Offline - Bengaluru": 145.00000000000003,
       "Online": 0,
-      "Offline": 0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -148,7 +149,6 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -158,9 +158,9 @@
       "Offline - Other": 0
     },
     "Total": {
-      "Overall": 0,
+      "Overall": 145.00000000000003,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 145.00000000000003,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -169,7 +169,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 145.00000000000003,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -286,9 +286,10 @@
       "Offline - Other": 0
     },
     "Nutty Stars Doughnut": {
-      "Overall": 0,
+      "Overall": 1.0,
+      "Offline": 1.0,
+      "Offline - Bengaluru": 1.0,
       "Online": 0,
-      "Offline": 0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -297,7 +298,6 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -307,9 +307,9 @@
       "Offline - Other": 0
     },
     "Total": {
-      "Overall": 0,
+      "Overall": 1.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 1.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -318,7 +318,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 1.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -330,9 +330,9 @@
   },
   "revenue_share": {
     "Rakhi Special Gift Hamper": {
-      "Overall": 0,
+      "Overall": 0.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 0.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -341,7 +341,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -351,9 +351,9 @@
       "Offline - Other": 0
     },
     "Rakhi Special Doughnut Box of 3": {
-      "Overall": 0,
+      "Overall": 0.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 0.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -362,7 +362,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -372,9 +372,9 @@
       "Offline - Other": 0
     },
     "Rakhi Special Doughnut Box of 6": {
-      "Overall": 0,
+      "Overall": 0.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 0.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -383,7 +383,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -393,9 +393,9 @@
       "Offline - Other": 0
     },
     "Rakhi Sunshine Doughnut": {
-      "Overall": 0,
+      "Overall": 0.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 0.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -404,7 +404,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -414,9 +414,9 @@
       "Offline - Other": 0
     },
     "Choco Caramel Luxe Doughnut": {
-      "Overall": 0,
+      "Overall": 0.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 0.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -425,7 +425,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 0.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -435,9 +435,9 @@
       "Offline - Other": 0
     },
     "Nutty Stars Doughnut": {
-      "Overall": 0,
+      "Overall": 100.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 100.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -446,7 +446,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 100.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -456,9 +456,9 @@
       "Offline - Other": 0
     },
     "Total": {
-      "Overall": 0,
+      "Overall": 100.0,
       "Online": 0,
-      "Offline": 0,
+      "Offline": 100.0,
       "Online - Bengaluru": 0,
       "Online - Chennai": 0,
       "Online - Hyderabad": 0,
@@ -467,7 +467,7 @@
       "Online - Chandigarh": 0,
       "Online - Pune": 0,
       "Online - Other": 0,
-      "Offline - Bengaluru": 0,
+      "Offline - Bengaluru": 100.0,
       "Offline - Chennai": 0,
       "Offline - Hyderabad": 0,
       "Offline - NCR": 0,
@@ -584,9 +584,9 @@
       "Offline - Other": 0.0
     },
     "Nutty Stars Doughnut": {
-      "Overall": 0.0,
+      "Overall": 0.010472034237572063,
       "Online": 0.0,
-      "Offline": 0.0,
+      "Offline": 0.019451775714372163,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0.0,
       "Online - Hyderabad": 0.0,
@@ -595,7 +595,7 @@
       "Online - Chandigarh": 0.0,
       "Online - Pune": 0.0,
       "Online - Other": 0.0,
-      "Offline - Bengaluru": 0.0,
+      "Offline - Bengaluru": 0.06329728109366524,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
       "Offline - NCR": 0.0,
@@ -605,9 +605,9 @@
       "Offline - Other": 0.0
     },
     "Total": {
-      "Overall": 0.0,
+      "Overall": 0.010472034237572063,
       "Online": 0.0,
-      "Offline": 0.0,
+      "Offline": 0.019451775714372163,
       "Online - Bengaluru": 0.0,
       "Online - Chennai": 0.0,
       "Online - Hyderabad": 0.0,
@@ -616,7 +616,7 @@
       "Online - Chandigarh": 0.0,
       "Online - Pune": 0.0,
       "Online - Other": 0.0,
-      "Offline - Bengaluru": 0.0,
+      "Offline - Bengaluru": 0.06329728109366524,
       "Offline - Chennai": 0.0,
       "Offline - Hyderabad": 0.0,
       "Offline - NCR": 0.0,
@@ -627,25 +627,25 @@
     }
   },
   "day_total_revenue": {
-    "Overall": 206503.34000000008,
-    "Online": 156017.03000000003,
-    "Online - NCR": 39833.72,
-    "Online - Chandigarh": 6741.960000000001,
-    "Online - Bengaluru": 37754.090000000004,
-    "Online - Pune": 8666.34,
-    "Offline": 50486.30999999999,
-    "Offline - NCR": 8086.200000000001,
-    "Online - Hyderabad": 41809.2,
-    "Online - Other": 5950.4,
-    "Online - Chennai": 12755.720000000001,
-    "Online - Jaipur": 2505.6,
-    "Offline - Chennai": 5491.1,
-    "Offline - Bengaluru": 13166.1,
-    "Offline - Pune": 3223.0,
-    "Offline - Hyderabad": 5565.43,
-    "Offline - Chandigarh": 920.0,
-    "Offline - Jaipur": 9775.48,
-    "Offline - Other": 4259.0
+    "Overall": 1384640.2400000005,
+    "Online": 639207.0100000001,
+    "Online - NCR": 139198.78000000003,
+    "Online - Chandigarh": 31384.210000000006,
+    "Online - Pune": 46952.86,
+    "Online - Bengaluru": 189081.10000000003,
+    "Offline": 745433.2300000002,
+    "Offline - Bengaluru": 229077.77000000016,
+    "Online - Hyderabad": 107363.34999999999,
+    "Offline - NCR": 122093.72999999998,
+    "Online - Other": 42980.950000000004,
+    "Online - Chennai": 68165.34999999999,
+    "Online - Jaipur": 14080.41,
+    "Offline - Chennai": 129313.05000000002,
+    "Offline - Chandigarh": 18058.54,
+    "Offline - Pune": 32776.74999999999,
+    "Offline - Hyderabad": 86747.7,
+    "Offline - Jaipur": 30212.159999999996,
+    "Offline - Other": 97153.53
   },
   "notes": {
     "extra_channel_seen": false,
@@ -653,10 +653,12 @@
       "Online": [
         "Coimbatore",
         "Mumbai",
-        "Mysuru"
+        "Mysuru",
+        "Panvel"
       ],
       "Offline": [
         "Coimbatore",
+        "Mumbai",
         "Mysuru"
       ]
     }
